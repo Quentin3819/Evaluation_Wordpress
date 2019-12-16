@@ -1,0 +1,19 @@
+
+# BEGIN WordPress
+# Les directives (lignes) entre 'BEGIN WordPress' et 'END WordPress' sont
+# généré dynamiquement, et ne doivent uniquement être modifiées via les filtres WordPress.
+# Toute modification des directives entre ces marqueurs sera outrepassée.
+Options -Indexes
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /eval/wordpress/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /eval/wordpress/index.php [L]
+</IfModule>
+<files wp-config.php>
+order allow,deny
+deny from all
+</files>
+# END WordPress
